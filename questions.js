@@ -6,7 +6,8 @@ const questions = [
       "Regional Court Military Police",
       "Royal Crime Management Patrol",
       "None"
-    ]
+    ],
+    correct: 0
   },
   {
     question: "What is a warrant?",
@@ -15,6 +16,17 @@ const questions = [
       "A police badge",
       "A uniform",
       "A courthouse"
-    ]
+    ],
+    correct: 0
+  },
+  {
+    question: "Which color is the sky on a clear day?",
+    answers: [
+      "Red",
+      "Blue",
+      "Green",
+      "Yellow"
+    ],
+    correct: 1
   }
 ];
