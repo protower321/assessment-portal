@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Create Account</title>
+<meta charset="UTF-8">
+<title>Register</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Create Account</h1>
+<div class="container">
+  <h1>Create Account</h1>
+  <input id="username" placeholder="Account Username">
+  <input id="password" type="password" placeholder="Password">
+  <input id="discord" placeholder="Discord Username">
+  <input id="roblox" placeholder="Roblox Username">
 
-<input id="username" placeholder="Account Username">
-<input id="password" type="password" placeholder="Password">
-<input id="discord" placeholder="Discord Username">
-<input id="roblox" placeholder="Roblox Username">
-
-<button onclick="register()">Register</button>
+  <button onclick="register()">Register</button>
+</div>
 
 <script src="register.js"></script>
 </body>
