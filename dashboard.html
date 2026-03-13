@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Dashboard</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>User Dashboard</h1>
-
-<h2 id="userinfo"></h2>
-
-<a href="exam.html">
-<button>Start Exam</button>
-</a>
+<div class="container">
+  <h1>Welcome!</h1>
+  <h2 id="userinfo"></h2>
+  <a href="exam.html"><button>Start Exam</button></a>
+</div>
 
 <script>
 let account = JSON.parse(localStorage.getItem("account"));
-document.getElementById("userinfo").innerText =
-"Discord: " + account.discord + " | Roblox: " + account.roblox;
+if (!account) window.location.href = "index.html"; // redirect if not logged in
+document.getElementById("userinfo").innerText = 
+`Discord: ${account.discord} | Roblox: ${account.roblox}`;
 </script>
 
 </body>
