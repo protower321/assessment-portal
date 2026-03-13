@@ -50,3 +50,29 @@ window.location.href="results.html"
 }
 
 load()
+
+function submitResultsToSheet(score) {
+  let account = JSON.parse(localStorage.getItem("account"));
+  let data = {
+    username: account.username,
+    discord: account.discord,
+    roblox: account.roblox,
+    exam: "Basic Knowledge Test",
+    score: score
+  };
+
+  fetch("GOOGLE_FORM_URL", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(data)
+  })
+  .then(res => console.log("Result submitted"))
+  .catch(err => console.error("Submission failed", err));
+}
+
+// Inside next() when exam finishes:
+if(current >= questions.length){
+    localStorage.setItem("score",score)
+    submitResultsToSheet(score)
+    window.location.href="results.html"
+}
