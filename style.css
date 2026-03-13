@@ -1,72 +1,132 @@
+/* Modern responsive layout */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   background-color: #0b3d91;
-  color: #fff;
+  color: white;
+  margin: 0;
+  padding: 20px;
+
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin: 0;
 }
 
-.container, .exam-container {
+/* Main containers */
+
+.container,
+.exam-container {
   background-color: #142e6f;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  width: 400px;
+
+  width: 100%;
+  max-width: 500px;
+
+  padding: 30px;
+  border-radius: 14px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   text-align: center;
 }
 
-h1, h2 {
-  margin-bottom: 25px;
+/* Titles */
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
 }
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
 
 input {
-  display: block;
   width: 100%;
   padding: 12px;
-  margin: 10px 0;
+
+  margin: 8px 0;
+
   border-radius: 8px;
   border: none;
+
+  font-size: 14px;
 }
+
+/* Buttons */
 
 button {
-  padding: 12px 20px;
+  width: 100%;
+  padding: 12px;
+
+  margin-top: 10px;
+
   border-radius: 10px;
   border: none;
+
+  font-weight: 600;
+  font-size: 14px;
+
   cursor: pointer;
-  margin-top: 10px;
-  width: 100%;
-  font-weight: bold;
 }
 
-button:hover {
-  opacity: 0.9;
-}
+/* Answer buttons */
 
 .answer-btn {
   background-color: #1e4bb8;
-  color: #fff;
-  margin: 5px 0;
-  transition: all 0.2s;
+  color: white;
+
+  margin: 6px 0;
 }
 
 .answer-btn:hover {
   background-color: #3a66cc;
 }
 
+/* Selected answer */
+
 .answer-btn.selected {
   background-color: #ffc107;
-  color: #000;
+  color: black;
 }
+
+/* Next button */
 
 #nextBtn {
   background-color: #ff9800;
-  color: #000;
+  color: black;
 }
 
 #nextBtn:disabled {
   background-color: #555;
   cursor: not-allowed;
+}
+
+/* Mobile improvements */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .container,
+  .exam-container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
 }
