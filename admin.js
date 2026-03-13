@@ -35,6 +35,7 @@ document.getElementById("d_email").innerText = app.email;
 document.getElementById("d_phone").innerText = app.phone;
 document.getElementById("d_address").innerText = app.address;
 document.getElementById("d_length").innerText = app.length;
+document.getElementById("d_inventory").innerText = app.inventory;
 document.getElementById("d_reason").innerText = app.reason;
 
 }
@@ -42,10 +43,12 @@ document.getElementById("d_reason").innerText = app.reason;
 function approve(id){
 
 applications.forEach(app=>{
-if(app.id === id) app.status="Approved";
+if(app.id === id){
+app.status = "Approved";
+}
 });
 
-localStorage.setItem("applications",JSON.stringify(applications));
+localStorage.setItem("applications", JSON.stringify(applications));
 
 location.reload();
 
@@ -54,10 +57,12 @@ location.reload();
 function deny(id){
 
 applications.forEach(app=>{
-if(app.id === id) app.status="Denied";
+if(app.id === id){
+app.status = "Denied";
+}
 });
 
-localStorage.setItem("applications",JSON.stringify(applications));
+localStorage.setItem("applications", JSON.stringify(applications));
 
 location.reload();
 
