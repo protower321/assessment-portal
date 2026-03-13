@@ -8,20 +8,20 @@ form.addEventListener("submit", function(e){
 
 e.preventDefault();
 
-let id = "CT-" + Math.floor(Math.random()*100000);
+let id = "CT-" + Math.floor(Math.random() * 100000);
 
 currentApplication = {
 
-id:id,
-name:document.getElementById("name").value,
-dob:document.getElementById("dob").value,
-email:document.getElementById("email").value,
-phone:document.getElementById("phone").value,
-address:document.getElementById("address").value,
-length:document.getElementById("length").value,
-reason:document.getElementById("reason").value,
-inventory:document.getElementById("inventory").value,
-status:"Pending"
+id: id,
+name: document.getElementById("name").value,
+dob: document.getElementById("dob").value,
+email: document.getElementById("email").value,
+phone: document.getElementById("phone").value,
+address: document.getElementById("address").value,
+length: document.getElementById("length").value,
+reason: document.getElementById("reason").value,
+inventory: document.getElementById("inventory").value,
+status: "Pending"
 
 };
 
