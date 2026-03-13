@@ -20,6 +20,7 @@ phone:document.getElementById("phone").value,
 address:document.getElementById("address").value,
 length:document.getElementById("length").value,
 reason:document.getElementById("reason").value,
+inventory:document.getElementById("inventory").value,
 status:"Pending"
 
 };
