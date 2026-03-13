@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>User Dashboard</h1>
+
+<h2 id="userinfo"></h2>
+
+<a href="exam.html">
+<button>Start Exam</button>
+</a>
+
+<script>
+
+let account = JSON.parse(localStorage.getItem("account"))
+
+document.getElementById("userinfo").innerText =
+"Discord: " + account.discord + " | Roblox: " + account.roblox
+
+</script>
+
+</body>
+</html>
