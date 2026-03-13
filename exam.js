@@ -1,51 +1,40 @@
 let current = 0;
-let score = 0;
+let selectedAnswer = null;
 
-function load(){
-    let q = questions[current];
-    document.getElementById("question").innerText = q.question;
+function load() {
+  selectedAnswer = null;
+  document.getElementById("nextBtn").disabled = true;
 
-    let html = "";
-    q.answers.forEach((a,i)=>{
-        html += `<button onclick="answer(${i})">${a}</button><br><br>`;
-    });
-    document.getElementById("answers").innerHTML = html;
+  let q = questions[current];
+  document.getElementById("question").innerText = q.question;
+
+  let html = "";
+  q.answers.forEach((a, i) => {
+    html += `<button class="answer-btn" onclick="selectAnswer(this)">${a}</button><br><br>`;
+  });
+
+  document.getElementById("answers").innerHTML = html;
 }
 
-function answer(i){
-    if(i === questions[current].correct){
-        score++;
-    }
+function selectAnswer(button) {
+  // remove highlight from all buttons
+  document.querySelectorAll(".answer-btn").forEach(btn => btn.classList.remove("selected"));
+  
+  // highlight the clicked button
+  button.classList.add("selected");
+  
+  selectedAnswer = button.innerText;
+  document.getElementById("nextBtn").disabled = false;
 }
 
-function next(){
-    current++;
-    if(current < questions.length){
-        load();
-    } else {
-        localStorage.setItem("score",score);
-        submitResultsToSheet(score);
-        window.location.href="results.html";
-    }
-}
-
-function submitResultsToSheet(score){
-    let account = JSON.parse(localStorage.getItem("account"));
-    let data = {
-        username: account.username,
-        discord: account.discord,
-        roblox: account.roblox,
-        exam: "Basic Knowledge Test",
-        score: score
-    };
-
-    fetch("GOOGLE_FORM_URL", { // replace with your Apps Script Web App URL
-        method:"POST",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify(data)
-    })
-    .then(res => console.log("Result submitted"))
-    .catch(err => console.error("Submission failed", err));
+function next() {
+  // Move to next question
+  current++;
+  if (current < questions.length) {
+    load();
+  } else {
+    alert("Exam finished!"); // you can redirect to results.html if needed
+  }
 }
 
 load();
