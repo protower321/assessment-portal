@@ -11,10 +11,8 @@ function login(){
        password === stored.password &&
        discord === stored.discord &&
        roblox === stored.roblox){
-
-        localStorage.setItem("loggedIn", username);
         window.location.href = "dashboard.html";
     } else {
-        alert("Login failed. Information does not match account.");
+        alert("Login failed. Check all fields.");
     }
 }
