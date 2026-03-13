@@ -4,7 +4,6 @@
 <title>Dashboard</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <h1>User Dashboard</h1>
@@ -16,12 +15,9 @@
 </a>
 
 <script>
-
-let account = JSON.parse(localStorage.getItem("account"))
-
+let account = JSON.parse(localStorage.getItem("account"));
 document.getElementById("userinfo").innerText =
-"Discord: " + account.discord + " | Roblox: " + account.roblox
-
+"Discord: " + account.discord + " | Roblox: " + account.roblox;
 </script>
 
 </body>
