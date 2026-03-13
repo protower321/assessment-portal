@@ -1,12 +1,12 @@
-/* Modern Dark Theme */
+/* Dark blue modern theme */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0b3d91; /* Dark Blue */
-  color: #ffffff;
+  background-color: #0b3d91;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   margin: 0;
 }
 
@@ -43,7 +43,7 @@ h2 {
 }
 
 .answer-btn.selected {
-  background-color: #ffc107; /* highlight selected answer */
+  background-color: #ffc107;
   color: #000;
 }
 
