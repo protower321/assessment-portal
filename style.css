@@ -1,132 +1,82 @@
-/* Modern responsive layout */
-
-* {
-  box-sizing: border-box;
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:'Poppins',sans-serif;
 }
 
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #0b3d91;
-  color: white;
-  margin: 0;
-  padding: 20px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+body{
+background:#0b1e3d;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+color:white;
 }
 
-/* Main containers */
-
-.container,
-.exam-container {
-  background-color: #142e6f;
-
-  width: 100%;
-  max-width: 500px;
-
-  padding: 30px;
-  border-radius: 14px;
-
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  text-align: center;
+.container{
+background:#132c5c;
+padding:30px;
+border-radius:10px;
+width:90%;
+max-width:700px;
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
-/* Titles */
-
-h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
+h1{
+text-align:center;
+margin-bottom:5px;
 }
 
-h2 {
-  font-size: 20px;
-  margin-bottom: 20px;
+.subtitle{
+text-align:center;
+margin-bottom:25px;
+font-size:14px;
+opacity:0.8;
 }
 
-/* Inputs */
-
-input {
-  width: 100%;
-  padding: 12px;
-
-  margin: 8px 0;
-
-  border-radius: 8px;
-  border: none;
-
-  font-size: 14px;
+form{
+display:flex;
+flex-direction:column;
+gap:12px;
 }
 
-/* Buttons */
-
-button {
-  width: 100%;
-  padding: 12px;
-
-  margin-top: 10px;
-
-  border-radius: 10px;
-  border: none;
-
-  font-weight: 600;
-  font-size: 14px;
-
-  cursor: pointer;
+label{
+font-size:14px;
 }
 
-/* Answer buttons */
-
-.answer-btn {
-  background-color: #1e4bb8;
-  color: white;
-
-  margin: 6px 0;
+input, textarea, select{
+padding:10px;
+border:none;
+border-radius:6px;
+background:#1e3f7a;
+color:white;
 }
 
-.answer-btn:hover {
-  background-color: #3a66cc;
+input::placeholder{
+color:#ccc;
 }
 
-/* Selected answer */
-
-.answer-btn.selected {
-  background-color: #ffc107;
-  color: black;
+button{
+margin-top:10px;
+padding:12px;
+border:none;
+border-radius:6px;
+background:#4c84ff;
+color:white;
+font-size:16px;
+cursor:pointer;
 }
 
-/* Next button */
-
-#nextBtn {
-  background-color: #ff9800;
-  color: black;
+button:hover{
+background:#3567d6;
 }
 
-#nextBtn:disabled {
-  background-color: #555;
-  cursor: not-allowed;
+.hidden{
+display:none;
 }
 
-/* Mobile improvements */
-
-@media (max-width: 600px) {
-
-  body {
-    padding: 10px;
-  }
-
-  .container,
-  .exam-container {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
+#confirmation{
+text-align:center;
+padding:20px;
 }
