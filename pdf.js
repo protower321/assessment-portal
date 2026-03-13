@@ -1,21 +1,26 @@
 function downloadPDF(){
 
 let text = `
-Residency Application
+Chester Township Residency Application
 
 Application ID: ${currentApplication.id}
 
 Name: ${currentApplication.name}
 DOB: ${currentApplication.dob}
+
 Email: ${currentApplication.email}
 Phone: ${currentApplication.phone}
 
-Address: ${currentApplication.address}
+Address:
+${currentApplication.address}
 
 Length of Residency:
 ${currentApplication.length}
 
-Reason:
+Inventory Public:
+${currentApplication.inventory}
+
+Reason for Residency:
 ${currentApplication.reason}
 
 Status: Pending
