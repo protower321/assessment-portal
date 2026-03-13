@@ -2,17 +2,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Admin Panel</title>
-
+<title>Residency Application Admin Panel</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>Residency Applications</h1>
+<h1>Chester Township Residency Applications</h1>
 
 <table id="appTable">
 
@@ -20,10 +18,27 @@
 <th>ID</th>
 <th>Name</th>
 <th>Status</th>
-<th>Action</th>
+<th>Review</th>
+<th>Decision</th>
 </tr>
 
 </table>
+
+<div id="details" class="hidden">
+
+<h2>Application Details</h2>
+
+<p><b>Name:</b> <span id="d_name"></span></p>
+<p><b>DOB:</b> <span id="d_dob"></span></p>
+<p><b>Email:</b> <span id="d_email"></span></p>
+<p><b>Phone:</b> <span id="d_phone"></span></p>
+<p><b>Address:</b> <span id="d_address"></span></p>
+<p><b>Residency Length:</b> <span id="d_length"></span></p>
+<p><b>Reason for Residency:</b></p>
+
+<div id="d_reason" style="background:#1e3f7a;padding:10px;border-radius:6px;"></div>
+
+</div>
 
 </div>
 
