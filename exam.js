@@ -1,40 +1,70 @@
-let current = 0;
-let selectedAnswer = null;
+// Questions array
+const questions = [
+  {
+    question: "What does RCMP stand for?",
+    answers: [
+      "Royal Canadian Mounted Police",
+      "Regional Court Military Police",
+      "Royal Crime Management Patrol",
+      "None"
+    ]
+  },
+  {
+    question: "What is a warrant?",
+    answers: [
+      "A legal authorization",
+      "A police badge",
+      "A uniform",
+      "A courthouse"
+    ]
+  }
+];
 
-function load() {
+let current = 0;      // current question
+let selectedAnswer = null; 
+
+function loadQuestion() {
   selectedAnswer = null;
   document.getElementById("nextBtn").disabled = true;
 
-  let q = questions[current];
+  const q = questions[current];
   document.getElementById("question").innerText = q.question;
 
-  let html = "";
-  q.answers.forEach((a, i) => {
-    html += `<button class="answer-btn" onclick="selectAnswer(this)">${a}</button><br><br>`;
-  });
+  const answersDiv = document.getElementById("answers");
+  answersDiv.innerHTML = "";
 
-  document.getElementById("answers").innerHTML = html;
+  q.answers.forEach(answer => {
+    const btn = document.createElement("button");
+    btn.innerText = answer;
+    btn.className = "answer-btn";
+    btn.onclick = () => selectAnswer(btn);
+    answersDiv.appendChild(btn);
+    answersDiv.appendChild(document.createElement("br"));
+    answersDiv.appendChild(document.createElement("br"));
+  });
 }
 
 function selectAnswer(button) {
-  // remove highlight from all buttons
+  // Remove highlight from all buttons
   document.querySelectorAll(".answer-btn").forEach(btn => btn.classList.remove("selected"));
-  
-  // highlight the clicked button
+
+  // Highlight clicked button
   button.classList.add("selected");
-  
   selectedAnswer = button.innerText;
+
+  // Enable Next button
   document.getElementById("nextBtn").disabled = false;
 }
 
-function next() {
-  // Move to next question
+function nextQuestion() {
   current++;
   if (current < questions.length) {
-    load();
+    loadQuestion();
   } else {
-    alert("Exam finished!"); // you can redirect to results.html if needed
+    alert("Exam finished!");
+    // Here you can redirect to results.html if you have one
   }
 }
 
-load();
+// Load first question
+loadQuestion();
