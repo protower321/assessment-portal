@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Results</title>
+<meta charset="UTF-8">
+<title>Exam Results</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Exam Results</h1>
-<h2 id="score"></h2>
+<div class="container">
+  <h1>Final Score</h1>
+  <h2 id="score"></h2>
+  <a href="dashboard.html"><button>Back to Dashboard</button></a>
+</div>
 
 <script>
 let score = localStorage.getItem("score");
-document.getElementById("score").innerText = "Score: " + score;
+let totalQuestions = localStorage.getItem("totalQuestions");
+let percent = Math.round((score / totalQuestions) * 100);
+document.getElementById("score").innerText = `${percent} / 100`;
 </script>
 
 </body>
