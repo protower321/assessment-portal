@@ -1,27 +1,6 @@
-// Questions array
-const questions = [
-  {
-    question: "What does RCMP stand for?",
-    answers: [
-      "Royal Canadian Mounted Police",
-      "Regional Court Military Police",
-      "Royal Crime Management Patrol",
-      "None"
-    ]
-  },
-  {
-    question: "What is a warrant?",
-    answers: [
-      "A legal authorization",
-      "A police badge",
-      "A uniform",
-      "A courthouse"
-    ]
-  }
-];
-
-let current = 0;      // current question
-let selectedAnswer = null; 
+let current = 0;
+let selectedAnswer = null;
+let score = 0;
 
 function loadQuestion() {
   selectedAnswer = null;
@@ -37,23 +16,25 @@ function loadQuestion() {
     const btn = document.createElement("button");
     btn.innerText = answer;
     btn.className = "answer-btn";
-    btn.onclick = () => selectAnswer(btn);
+    btn.onclick = () => selectAnswer(btn, answer, q.correct);
     answersDiv.appendChild(btn);
     answersDiv.appendChild(document.createElement("br"));
     answersDiv.appendChild(document.createElement("br"));
   });
 }
 
-function selectAnswer(button) {
-  // Remove highlight from all buttons
+function selectAnswer(button, answer, correctIndex) {
   document.querySelectorAll(".answer-btn").forEach(btn => btn.classList.remove("selected"));
-
-  // Highlight clicked button
   button.classList.add("selected");
-  selectedAnswer = button.innerText;
+  selectedAnswer = answer;
 
   // Enable Next button
   document.getElementById("nextBtn").disabled = false;
+
+  // Add 1 point if correct
+  if (questions[current].answers.indexOf(answer) === correctIndex) {
+    score++;
+  }
 }
 
 function nextQuestion() {
@@ -61,10 +42,10 @@ function nextQuestion() {
   if (current < questions.length) {
     loadQuestion();
   } else {
-    alert("Exam finished!");
-    // Here you can redirect to results.html if you have one
+    localStorage.setItem("score", score);
+    localStorage.setItem("totalQuestions", questions.length);
+    window.location.href = "results.html";
   }
 }
 
-// Load first question
 loadQuestion();
