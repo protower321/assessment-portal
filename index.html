@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Assessment Portal</title>
+<meta charset="UTF-8">
+<title>Assessment Portal Login</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Assessment Portal Login</h1>
+<div class="container">
+  <h1>Login</h1>
+  <input id="username" placeholder="Account Username">
+  <input id="password" type="password" placeholder="Password">
+  <input id="discord" placeholder="Discord Username">
+  <input id="roblox" placeholder="Roblox Username">
 
-<input id="username" placeholder="Account Username">
-<input id="password" type="password" placeholder="Password">
-<input id="discord" placeholder="Discord Username">
-<input id="roblox" placeholder="Roblox Username">
+  <button onclick="login()">Login</button>
 
-<button onclick="login()">Login</button>
-
-<p>No account?</p>
-<a href="register.html">
-<button>Create Account</button>
-</a>
+  <p>Don't have an account?</p>
+  <a href="register.html"><button>Create Account</button></a>
+</div>
 
 <script src="auth.js"></script>
 </body>
